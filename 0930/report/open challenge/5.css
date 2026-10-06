@@ -1,0 +1,67 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+header {
+    height: 20%;
+    background-color: yellowgreen;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: brown;
+    text-align: center;
+    margin-top: 0;
+}
+
+nav {
+    height: 72%;
+    width: 20%;
+    float: left;
+    background-color: peru;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+nav ul {
+    border: 1px dotted black;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+section {
+    height: 72%;
+    width: 80%;
+    float: left;
+    background-color: lightblue;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+h2 {
+    color: blue;
+    text-shadow: 1px 1px 2px skyblue;
+}
+
+p {
+    font-family: "휴먼편지체", "맑은 고딕", sans-serif;
+    font-size: 1em;
+    text-indent: 1em;
+}
+
+footer {
+    height: 8%;
+    clear: both;
+    background-color: olive;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+}

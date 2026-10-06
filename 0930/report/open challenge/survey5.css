@@ -1,0 +1,33 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: yellow;
+    height: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin-top: 0;
+    color: blue;
+}
+
+section {
+    background-color: pink;
+    height: 70%;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+footer {
+    background-color: #cda8d8;
+    height: 10%;
+    padding: 10px;
+    box-sizing: border-box;
+}
