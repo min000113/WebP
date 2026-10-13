@@ -1,0 +1,20 @@
+<script>
+  let str = prompt("숫자 입력", "");
+  let n = parseInt(str);
+  
+  if (!isNaN(n)) {
+    let least = n % 10; // 가장 낮은 자리 수
+    let most = n;       // 가장 큰 자리 수
+    
+    // most가 10 미만이 될 때까지 계속 10으로 나눔 (교재 힌트 활용)[cite: 2]
+    while (most >= 10) {
+      most = Math.floor(most / 10);
+    }
+    
+    if (most === least) {
+      document.write(str + ": 같음");
+    } else {
+      document.write(str + ": 다름");
+    }
+  }
+</script>
