@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>갬블링 게임</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h3 {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .box {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: linen;
+            border: 1px solid darkgray;
+            font-size: 40px;
+            font-weight: bold;
+            font-style: italic;
+            color: blue;
+            cursor: pointer;
+            margin-right: 10px;
+            user-select: none;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            font-style: italic;
+            color: violet;
+            cursor: pointer;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>갬블링 게임</h3>
+    <p>각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.</p>
+
+    <div>
+        <div class="box">0</div>
+        <div class="box">0</div>
+        <div class="box">0</div>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        const boxes = document.querySelectorAll('.box');
+        const resultDiv = document.getElementById('result');
+
+        let clicked = [false, false, false];
+        let values = [0, 0, 0];
+        let gameOver = false;
+
+        boxes.forEach((box, index) => {
+            box.addEventListener('click', () => {
+                if (gameOver || clicked[index]) return;
+
+                const randomNum = Math.floor(Math.random() * 3);
+                box.textContent = randomNum;
+                values[index] = randomNum;
+                clicked[index] = true;
+
+                if (clicked.every(val => val === true)) {
+                    gameOver = true;
+                    if (values[0] === values[1] && values[1] === values[2]) {
+                        resultDiv.textContent = "Success(click here to do again)";
+                    } else {
+                        resultDiv.textContent = "fail(click here to do again)";
+                    }
+                }
+            });
+        });
+
+        resultDiv.addEventListener('click', () => {
+            if (!gameOver) return;
+
+            clicked = [false, false, false];
+            values = [0, 0, 0];
+            gameOver = false;
+            resultDiv.textContent = "";
+
+            boxes.forEach(box => {
+                box.textContent = "0";
+            });
+        });
+    </script>
+</body>
+</html>
