@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>계산기 만들기</title>
+<script>
+    function calc(e) {
+        if(e.key === "Enter") {
+            let exp = document.getElementById("exp").value;
+            let result = document.getElementById("result");
+            try {
+                result.value = eval(exp);
+            } catch(err) {
+                result.value = "수식 오류";
+            }
+        }
+    }
+</script>
+</head>
+<body>
+<h3>계산기 만들기</h3>
+<hr>
+<p>수식을 입력하고 &lt;Enter&gt;를 입력하세요</p>
+<form>
+    식 <input type="text" id="exp" onkeydown="calc(event)"><br>
+    값 <input type="text" id="result" readonly>
+</form>
+</body>
+</html>
