@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>마우스 클릭 연습</title>
+<style>
+    table { border-collapse: collapse; }
+    td { width: 25px; height: 25px; border: 1px solid black; padding: 0; }
+    img { display: block; width: 25px; height: 25px; }
+</style>
+<script>
+    let imgs;
+    window.onload = function() {
+        imgs = document.getElementsByTagName("img");
+        for(let i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = moveImage;
+        }
+        moveImage();
+    }
+    
+    function moveImage() {
+        for(let i = 0; i < imgs.length; i++) {
+            imgs[i].src = "";
+        }
+        let randomIdx = Math.floor(Math.random() * 100);
+        imgs[randomIdx].src = "media/donkey.png";
+    }
+</script>
+</head>
+<body>
+<h3>마우스 클릭 연습</h3>
+<hr>
+<table>
+    <script>
+        for(let i = 0; i < 10; i++) {
+            document.write("<tr>");
+            for(let j = 0; j < 10; j++) {
+                document.write("<td><img src=''></td>");
+            }
+            document.write("</tr>");
+        }
+    </script>
+</table>
+</body>
+</html>
